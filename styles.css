@@ -1,0 +1,537 @@
+@font-face {
+  font-family: "Libertinus Serif";
+  src: url("fonts/libertinus-serif-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libertinus Serif";
+  src: url("fonts/libertinus-serif-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libertinus Serif";
+  src: url("fonts/libertinus-serif-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libertinus Serif";
+  src: url("fonts/libertinus-serif-latin-700-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ========================================
+   Typography: Libertinus Serif
+   ======================================== */
+
+body {
+  font-family: "Libertinus Serif", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Match the more spacious PDF tables in the HTML version. */
+body table th,
+body table td {
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+
+body p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Libertinus Serif", Georgia, serif;
+  font-weight: bold;
+  color: black;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+/* ========================================
+   Title and Authors
+   ======================================== */
+
+#title-block-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ========================================
+   Code
+   ======================================== */
+
+pre, code {
+  font-family: monospace;
+}
+
+/* ========================================
+   Hypothesis Box
+   ======================================== */
+
+.hypothesis-box {
+  background-color: #f5efd2;
+  border: 1px solid #d8cd9c;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+
+.hypothesis-box p:first-child {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.hypothesis-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   APA-Style Bibliography
+   ======================================== */
+
+#refs .csl-entry {
+  padding-left: 2em;
+  text-indent: -2em;
+  margin-bottom: 0.9em;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#refs a {
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   Code Blocks
+   ======================================== */
+
+div.sourceCode {
+  background-color: #fdfbf2;
+  border: 1px solid #e1d6ae;
+  border-left: 3px solid #a1925a;
+  border-radius: 7px;
+  padding: 12px 16px;
+  margin: 20px 0;
+}
+
+div.sourceCode pre {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.sourceCode code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+/* Code output */
+.cell-output {
+  background: #FAFAFA;
+  border-radius: 5px;
+  padding: 10px 14px;
+  margin-top: 8px;
+}
+
+/* Consistent yellow-and-white styling across all document tables. */
+body table thead th {
+  background-color: #f5efd2;
+}
+body table tbody tr:nth-child(even) td {
+  background-color: #faf7e8;
+}
+body table td {
+  border-bottom: 1px solid #e8e1c6;
+}
+
+body table tbody tr:nth-child(odd) td {
+  background-color: white;
+}
+
+/* Appendix A: neutral, code-style participant-information panel. */
+.participant-information-panel {
+  background: #f5f5f5;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.participant-information-panel > p:first-child {
+  font-family: monospace;
+  color: #444;
+  border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 10px;
+}
+.participant-information-panel pre {
+  background: transparent;
+  border: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+/* Render participant copy as formatted content inside the neutral panel. */
+.participant-information-panel {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+.participant-information-panel p {
+  text-align: left;
+}
+
+/* Align the unthemed HTML document with the PDF's restrained page design. */
+:root {
+  --pap-yellow: #f5efd2;
+  --pap-pale-yellow: #faf7e8;
+  --pap-yellow-border: #e1d6ae;
+}
+html { background: #fff; }
+body {
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 56px;
+  color: #171717;
+  font-size: 16px;
+  line-height: 1.3;
+}
+body p { margin: 0 0 0.65em; }
+h1, h2, h3, h4 { line-height: 1.25; }
+h1 { margin: 1.7em 0 0.75em; }
+h2, h3, h4 { margin: 1.4em 0 0.65em; }
+body p + p { text-indent: 1.5em; }
+#title-block-header p,
+.hypothesis-box p,
+.participant-information-panel p,
+.cell-output p,
+figcaption p,
+#refs p { text-indent: 0; }
+#title-block-header { margin-bottom: 2.5rem; }
+#title-block-header .title {
+  font-size: 2em;
+  line-height: 1.2;
+  font-weight: normal;
+  margin: 0 0 0.7em;
+}
+#title-block-header .subtitle {
+  font-size: 1.5em;
+  margin: 0 0 1.6em;
+}
+#title-block-header .author {
+  max-width: 800px;
+  margin: 0 auto 1.6em;
+  line-height: 1.5;
+}
+#TOC {
+  margin: 2em 0 3em;
+  padding: 1em 1.5em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+#TOC ul { padding-left: 1.3em; }
+#TOC li { margin: 0.2em 0; }
+.hypothesis-box {
+  background: var(--pap-pale-yellow);
+  border-color: var(--pap-yellow-border);
+  padding: 0 18px 14px;
+}
+.hypothesis-box p:first-child {
+  background: var(--pap-yellow);
+  border-bottom: 1px solid var(--pap-yellow-border);
+  margin: 0 -18px 12px;
+  padding: 7px 18px;
+  border-radius: 5px 5px 0 0;
+}
+body table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1.5px solid #333;
+  border-bottom: 1.5px solid #333;
+  font-size: 0.94em;
+  line-height: 1.35;
+}
+body table th, body table td {
+  padding: 0.55em 0.7em;
+  vertical-align: top;
+  text-align: left;
+}
+body table thead th {
+  background: white;
+  border-bottom: 1px solid #555;
+  font-style: italic;
+  font-weight: normal;
+}
+body table tbody tr:nth-child(odd) td { background: var(--pap-pale-yellow); }
+body table tbody tr:nth-child(even) td { background: white; }
+body table td { border-bottom: none; }
+.quarto-float { margin: 1.5em 0 0.85em; }
+.quarto-float figure { margin: 0; }
+.quarto-float figcaption {
+  text-align: center;
+  color: inherit;
+  font-size: 0.95em;
+  margin-bottom: 1em;
+}
+.quarto-float-tbl > div[aria-describedby] {
+  overflow-x: auto;
+}
+.quarto-float + p:has(> strong:first-child),
+.cell-output-display > p:has(> strong:first-child) {
+  font-size: 0.87em;
+  line-height: 1.25;
+  text-indent: 0;
+  margin: 0.7em 0 1.3em;
+}
+.cell-output {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+.cell-output-stdout pre {
+  background: #f5f5f5;
+  padding: 12px;
+  overflow-x: auto;
+}
+pre, code {
+  font-family: Inconsolata, "SFMono-Regular", Consolas, monospace;
+}
+pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+div.sourceCode code { font-family: inherit; line-height: 1.35; }
+body p code, body li code, body td code {
+  background: #f3f1f2;
+  padding: 0.1em 0.25em;
+  font-size: 0.88em;
+}
+.quarto-float-fig img { max-width: 100%; height: auto; }
+#refs .csl-entry { line-height: 1.3; }
+@media (max-width: 700px) {
+  body { padding: 24px 16px; }
+  #title-block-header .title { font-size: 1.65em; }
+  body table { min-width: 580px; }
+}
+
+/* Center the complete title block, overriding justified body paragraphs. */
+#title-block-header,
+#title-block-header .title,
+#title-block-header p,
+#title-block-header .quarto-title-authors,
+#title-block-header .quarto-title-author {
+  text-align: center;
+  text-indent: 0;
+}
+
+/* Magenta link borders match the PDF. */
+a,
+a:visited,
+#refs a {
+  color: #86106f;
+}
+a:hover,
+a:focus-visible {
+  color: #650852;
+  text-decoration: underline;
+}
+
+/* Keep the TOC hierarchy without bullet markers. */
+#TOC ul,
+#TOC ol,
+#TOC li {
+  list-style: none;
+}
+#TOC > ul,
+#TOC > ol {
+  padding-left: 0;
+}
+
+/* Desktop navigation stays accessible beside the reading column. */
+@media (min-width: 1200px) {
+  body {
+    max-width: 1100px;
+    margin-left: max(280px, calc((100vw - 1380px) / 2 + 280px));
+    margin-right: 20px;
+    padding: 48px 40px;
+  }
+  #TOC {
+    position: fixed;
+    top: 28px;
+    left: max(18px, calc((100vw - 1380px) / 2));
+    width: 235px;
+    max-height: calc(100vh - 56px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    margin: 0;
+    padding: 12px 10px;
+    border: 0;
+    border-right: 1px solid #e8e1c6;
+    font-size: 0.85em;
+    line-height: 1.35;
+  }
+  #TOC h2 { font-size: 1.05em; margin-top: 0; }
+}
+#TOC a {
+  display: block;
+  padding: 5px 8px;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  color: #40391f;
+  text-decoration: none;
+}
+#TOC .header-section-number {
+  margin-right: 0.25em;
+  color: #786e56;
+  font-variant-numeric: tabular-nums;
+}
+#TOC ul ul {
+  margin-left: 9px;
+  padding-left: 8px;
+  border-left: 1px solid var(--pap-yellow-border);
+}
+#TOC a:hover,
+#TOC a:focus-visible,
+#TOC a.is-current-section {
+  background: var(--pap-pale-yellow);
+  color: #86106f;
+}
+#TOC a:focus-visible {
+  outline: 1px solid #86106f;
+  outline-offset: 1px;
+}
+#TOC a.is-current-section {
+  border-left-color: #c000a0;
+  font-weight: bold;
+}
+h1[id], h2[id], h3[id] { scroll-margin-top: 24px; }
+
+/* Discreet, keyboard-accessible controls for the existing code folds. */
+details.code-fold { margin: 1em 0 1.4em; }
+details.code-fold > summary {
+  display: list-item;
+  width: fit-content;
+  cursor: pointer;
+  color: #575032;
+  background: #fdfbf2;
+  border: 1px solid #e8e1c6;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-family: Inconsolata, Consolas, monospace;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+details.code-fold > summary:hover { background: #f5efd2; }
+details.code-fold > summary:focus-visible {
+  outline: 2px solid #8c7b43;
+  outline-offset: 3px;
+}
+details.code-fold[open] > summary { margin-bottom: 8px; }
+details.code-fold div.sourceCode { margin-top: 0; }
+
+/* Responsive reading layout and contained horizontal table scrolling. */
+@media (max-width: 1199px) {
+  #TOC { position: static; width: auto; max-height: none; }
+}
+@media (max-width: 700px) {
+  body { width: 100%; padding: 24px 16px; margin: 0; font-size: 16px; }
+  #title-block-header .title { font-size: 1.6em; overflow-wrap: break-word; }
+  #title-block-header .subtitle { font-size: 1.25em; }
+  #title-block-header .author { font-size: 0.9em; }
+  #TOC { padding: 12px 4px; font-size: 0.9em; }
+  .hypothesis-box { margin: 18px 0; }
+  .participant-information-panel { padding: 12px; }
+  .quarto-float-tbl > div[aria-describedby] {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+  .quarto-float { max-width: 100%; }
+  body table { font-size: 0.88em; }
+  figcaption { overflow-wrap: anywhere; }
+  pre, pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+}
+
+/* Small personal accents, limited to the HTML reading experience. */
+::selection {
+  background: #f5efd2;
+  color: #40391f;
+}
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #a1925a;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  z-index: 1000;
+}
+@media print {
+  .reading-progress { display: none; }
+}
+
+/* Box text links without affecting code anchors or copy controls. */
+body :is(p, li, td, figcaption, #refs) a[href]:not([aria-hidden="true"], #TOC a) {
+  box-shadow: 0 0 0 1px #c000a0;
+  border-radius: 2px;
+  padding-inline: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Keep Quarto's copy control legible with the unthemed HTML layout. */
+.code-copy-button {
+  color: #575032;
+}
+
+.code-copy-outer-scaffold {
+  position: relative;
+}
+.code-copy-outer-scaffold .sourceCode pre {
+  padding-right: 4.5em;
+}
+.code-copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff;
+  border: 1px solid var(--pap-yellow-border);
+  border-radius: 4px;
+  padding: 3px 7px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75em;
+}
+.code-copy-button::after {
+  content: "Copy";
+}
+.code-copy-button-checked::after {
+  content: "Copied";
+}

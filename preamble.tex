@@ -1,0 +1,57 @@
+\usepackage{inconsolata}
+\usepackage{fvextra}
+\fvset{breaklines=true,breakanywhere=true}
+\AtBeginDocument{%
+  \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{%
+    commandchars=\\\{\},breaklines=true,breakanywhere=true,fontsize=\small
+  }%
+}
+\usepackage[most]{tcolorbox}
+\definecolor{projectYellow}{HTML}{F5EFD2}
+\definecolor{projectPaleYellow}{HTML}{FAF7E8}
+\definecolor{projectYellowBorder}{HTML}{E1D6AE}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{%
+  \apptocmd{\@title}{\par\vspace{0.6em}{\Large #1\par}}{}{}%
+}
+\makeatother
+
+\usepackage{array}
+\usepackage{colortbl}
+\newif\ifstudytablecolors
+\studytablecolorstrue
+\pretocmd{\maketitle}{\studytablecolorsfalse}{}{}
+\apptocmd{\maketitle}{\studytablecolorstrue}{}{}
+\AtBeginEnvironment{longtable}{%
+  \rowcolors{2}{white}{projectPaleYellow}%
+  \renewcommand{\arraystretch}{1.15}%
+  \setlength{\extrarowheight}{2pt}%
+}
+\AtBeginEnvironment{tabular}{%
+  \ifstudytablecolors
+    \rowcolors{2}{white}{projectPaleYellow}%
+  \else
+    \rowcolors{2}{}{}%
+  \fi
+  \renewcommand{\arraystretch}{1.15}%
+  \setlength{\extrarowheight}{2pt}%
+}
+\AtBeginEnvironment{CSLReferences}{%
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{6pt}%
+}
+
+\AtBeginDocument{%
+  \hypersetup{
+    colorlinks=false,
+    citebordercolor={0.753 0 0.627},
+    urlbordercolor={0.753 0 0.627},
+    linkbordercolor={0.753 0 0.627},
+    pdfborder={0 0 1}
+  }
+}

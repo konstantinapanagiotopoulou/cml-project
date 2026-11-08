@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+.quarto/
+__pycache__/
+.ipynb_checkpoints/
+
+/.quarto/
+**/*.quarto_ipynb
+/paper_files/
