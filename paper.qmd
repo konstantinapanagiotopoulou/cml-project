@@ -68,7 +68,7 @@ Some stuff to be introduced.
 ::: {.hypothesis-box}
 **Research question**
 
-Will my research question make any sense?
+How does the predictive strength of covariates that are only outcome-relevant affect the relative performance of Dragonnet and TARNet in estimating the Average Treatment Effect (ATE)?
 :::
 :::
 
@@ -84,24 +84,90 @@ Will my research question make any sense?
   title={Research question},
   fonttitle=\bfseries
 ]
-Will my research question make any sense?
+How does the predictive strength of covariates that are only outcome-relevant affect the relative performance of Dragonnet and TARNet in estimating the Average Treatment Effect (ATE)?
 \end{tcolorbox}
 ```
 :::
 
-# Data and methods
+## Hypothesis
 
-| Variable | Role | Definition |
-|:---------|:-----|:-----------|
-| 1 | hm | hm |
-| 2 | hm | hm |
-| 3 | hm | hm |
+::: {.content-visible when-format="html"}
+::: {.hypothesis-box}
+**Hypothesis**
 
-: Some variables {#tbl-variables}
+As the predictive strength of outcome-only covariates increases, Dragonnet's relative advantage over TARNet in ATE estimation may diminish, because accurate modeling of said covariates becomes increasingly valuable.
+:::
+:::
 
-# Analysis {#analysis}
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\begin{tcolorbox}[
+  colback=projectPaleYellow,
+  colframe=projectYellowBorder,
+  colbacktitle=projectYellow,
+  coltitle=black,
+  boxrule=0.5pt,
+  arc=2mm,
+  title={Research question},
+  fonttitle=\bfseries
+]
+As the predictive strength of outcome-only covariates increases, Dragonnet's relative advantage over TARNet in ATE estimation may diminish, because accurate modeling of said covariates becomes increasingly valuable.
+\end{tcolorbox}
+```
+:::
 
-Just to see how the code blocks appear.
+
+# Statistical Foundations {#foundations}
+
+## Causal identification
+
+* Define the ATE using potential outcomes: $\tau = \mathbb{E}[Y(1)-Y(0)]$.
+* Introduce identification assumptions.
+
+## Propensity-score sufficiency
+
+* Introduce this result from [@rosenbaum1983propensity]: $e(X)=P(T=1|X)$.
+* Explain why conditioning on the true propensity score is sufficient for confounding adjustment under the identification assumptions.
+* Make sure to distinguish between: a) confounders, which influence treatment and outcome; b) outcome-only predictors, which influence outcomes but not treatment assignment. A variable can be unnecessary for identification but useful for improving statistical efficiency.
+
+
+# Neural Networks for Causal Estimation
+
+* Compare the architectures of TARNet and Dragonnet. Explain that both use a shared representation and two outcome heads, with Dragonnet adding a third head to predict treatment assignment.
+* Present training objectives.
+
+
+# Designing the Experiment {#experiment}
+
+## Data-Generating Process {#dgp}
+
+* Simulate observational data with $X=(X_C, X_O), where X_C denotes confounders and X_O denotes outcome-only covariates.
+* Treatment assignment: 
+$$
+T_i \sim \operatorname{Bernoulli}\bigl(e(X_{Ci})\bigr) \text{,} \quad \text{where}
+$$
+$$
+e(X_{Ci}) = \sigma\bigl(f(X_{Ci})\bigr).
+$$
+* Potential outcomes:
+$$
+Y_i(0)=g(X_{Ci})+\gamma h(X_{Oi})+\epsilon_i \quad \text{and}
+$$
+$$
+Y_i(1)=Y_i(0)+\tau \text{,} \quad \tau=2.
+$$
+* The parameter $\gamma$ controls the predictive strength of outcome-only covariates.
+
+## Simulation Scenarios {#scenarios}
+
+* Hold the number of covariates, sample size, confounding mechanism, and noise variance constant; vary only $\gamma$:
+
+
+# Results {#results}
+
+
+
+A silly block just to see how the code appears:
 
 ```{python}
 #| label: crossing-times
